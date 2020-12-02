@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "firstname": "Harold",
+        "lastname": "Johnson",
+        "department": "Accounting",
+        "email": "harold@mail.com"
+    },
+    {
+        "id": 2,
+        "firstname": "Tim",
+        "lastname": "Davis",
+        "department": "Sales",
+        "email": "tim@mail.com"
+    },
+    {
+        "id": 3,
+        "firstname": "Mark",
+        "lastname": "Careuthers",
+        "department": "Accounting",
+        "email": "mark@mail.com"
+    },
+    {
+        "id": 4,
+        "firstname": "Mike",
+        "lastname": "Jones",
+        "department": "Marketing",
+        "email": "mike@mail.com"
+    },
+    {
+        "id": 5,
+        "firstname": "Samantha",
+        "lastname": "Short",
+        "department": "Sales",
+        "email": "samantha@mail.com"
+    },
+    {
+        "id": 6,
+        "firstname": "Terry",
+        "lastname": "Lewis",
+        "department": "Marketing",
+        "email": "terry@mail.com"
+    }
+]
