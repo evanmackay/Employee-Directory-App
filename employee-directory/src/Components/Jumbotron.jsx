@@ -8,7 +8,7 @@ const Jumbo = () => {
 
             <hr/>
 
-            <p>Select from the list on the left what you would like to do.</p>
+            <p>Select from the list below to select what you would like to do.</p>
 
 
         </Jumbotron>
