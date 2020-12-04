@@ -5,7 +5,6 @@ import { ListGroup, ListGroupItem, Button, Jumbotron, Container, Row, Col } from
 import {BrowserRouter as Router, Switch, Route, Link, BrowserRouter} from 'react-router-dom';
 import employees from './employees.json';
 import EmployeeTable from './Components/EmployeeTable';
-import DepartmentJumbo from './Components/DepartmentJumbotron'
 
 class App extends React.Component {
  state = {
@@ -29,7 +28,7 @@ class App extends React.Component {
 
                   <hr/>
 
-                  <p>Select from the list below to select what you would like to do.</p>
+                  <p>View your employees by clicking the button below.</p>
 
 
               </Jumbotron>
@@ -45,12 +44,7 @@ class App extends React.Component {
             <Col className="sideLinks">
               <div className="employeeList">
                   <ListGroup>
-                      <ListGroupItem><Link to="/departments"><Button variant="outline-primary" block>View Departments</Button></Link></ListGroupItem>
                       <ListGroupItem><Link to="/viewall"><Button variant="outline-primary" block>View All Employees</Button></Link></ListGroupItem>
-                      <ListGroupItem><Link to="/search"><Button variant="outline-primary" block
-                      >Search Employees</Button></Link></ListGroupItem>
-                      <ListGroupItem><Link to="/add"><Button variant="outline-primary" block>Add Employees</Button></Link></ListGroupItem>
-                      <ListGroupItem><Link to="/remove"><Button variant="outline-primary" block>Remove Employees</Button></Link></ListGroupItem>
                   </ListGroup>
               </div>
             </Col>
@@ -62,17 +56,6 @@ class App extends React.Component {
       {this.state.display === "viewall" && (
         {EmployeeTable}
       )}
-      
-      <Switch>
-        <Route exact path="/"/>
-        <Route exact path="/departments" component={DepartmentJumbo}/>
-        
-        <Route exact path="/search"/>
-        <Route exact path="/add"/>
-        <Route exact path="/remove"/>
-      </Switch>
-
-
      </BrowserRouter>
    )
  }

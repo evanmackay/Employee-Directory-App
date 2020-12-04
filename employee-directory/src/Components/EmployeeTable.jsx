@@ -25,6 +25,8 @@ class EmployeeTable extends React.Component {
         phone: emp.cell,
         gender: emp.gender,
         email: emp.email,
+        city: emp.location.city,
+        state: emp.location.state,
         picture: emp.picture.thumbnail,
         visible: true,
       };
@@ -37,8 +39,8 @@ class EmployeeTable extends React.Component {
         <InputGroup className="mb-3"
         >
           <FormControl
-            placeholder="Search"
-            value={this.state.filterText}
+            placeholder="Search by Last Name"
+            value={this.state.filterText.toLowerCase()}
             onChange={(event) => {
                 let nextEmployees = [...this.state.employees]
                 nextEmployees= nextEmployees.map((emp) => {
@@ -46,7 +48,7 @@ class EmployeeTable extends React.Component {
                         return{
                             ...emp, visible: true
                         }
-                    } else if (emp.firstname.includes(event.target.value)) {
+                    } else if (emp.lastname.toLowerCase().includes(event.target.value)) {
                         return {
                             ...emp, visible: true
                         }
@@ -63,8 +65,9 @@ class EmployeeTable extends React.Component {
           />
         </InputGroup>
 
-        {this.state.employees.map((employee) => (
-          <div>
+        {this.state.employees.map((employee) => {
+            if (employee.visible) {
+          return <div>
             <Card className="employeeCard" style={{ width: "100%" }}>
               <Card.Body>
                 <Image src={employee.picture} roundedCircle />
@@ -75,11 +78,14 @@ class EmployeeTable extends React.Component {
                 <Card.Text>
                   <ListGroup.Item>Phone: {employee.phone}</ListGroup.Item>
                   <ListGroup.Item>Email: {employee.email}</ListGroup.Item>
+                  <ListGroup.Item>Location: {employee.city}, {employee.state}</ListGroup.Item>
                 </Card.Text>
               </Card.Body>
             </Card>
           </div>
-        ))}
+
+            } else { return <></>}
+        })}
       </div>
     );
   }
