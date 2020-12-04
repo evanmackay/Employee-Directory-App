@@ -1,6 +1,5 @@
 # Employee Directory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 This is an application that allows you to track employees in a directory. It has search functionality to search employees by their last name.
 
 ## Available Scripts
