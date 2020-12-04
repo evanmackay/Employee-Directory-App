@@ -13,9 +13,7 @@ class App extends React.Component {
    display: 'home'
  }
 
- showEmployeeTable() {
-   this.setState({display: this.state.display = 'viewall'})
- }
+ 
 
  render() {
    return (
@@ -38,6 +36,10 @@ class App extends React.Component {
             </Col>       
 
           </Row>
+          <Switch>
+            <Route exact path="/viewall" component={EmployeeTable}/>
+          </Switch>
+
           <Row>
 
             <Col className="sideLinks">
@@ -46,7 +48,6 @@ class App extends React.Component {
                       <ListGroupItem><Link to="/departments"><Button variant="outline-primary" block>View Departments</Button></Link></ListGroupItem>
                       <ListGroupItem><Link to="/viewall"><Button variant="outline-primary" block>View All Employees</Button></Link></ListGroupItem>
                       <ListGroupItem><Link to="/search"><Button variant="outline-primary" block
-                      onClick={this.showEmployeeTable()}
                       >Search Employees</Button></Link></ListGroupItem>
                       <ListGroupItem><Link to="/add"><Button variant="outline-primary" block>Add Employees</Button></Link></ListGroupItem>
                       <ListGroupItem><Link to="/remove"><Button variant="outline-primary" block>Remove Employees</Button></Link></ListGroupItem>
@@ -65,7 +66,7 @@ class App extends React.Component {
       <Switch>
         <Route exact path="/"/>
         <Route exact path="/departments" component={DepartmentJumbo}/>
-        <Route exact path="/viewall" component={EmployeeTable}/>
+        
         <Route exact path="/search"/>
         <Route exact path="/add"/>
         <Route exact path="/remove"/>
