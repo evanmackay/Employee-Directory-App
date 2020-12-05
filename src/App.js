@@ -1,10 +1,11 @@
-import './styles/App.css';
 import React from 'react';
+import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ListGroup, ListGroupItem, Button, Jumbotron, Container, Row, Col } from 'react-bootstrap';
 import {BrowserRouter as Router, Switch, Route, Link, BrowserRouter} from 'react-router-dom';
 import employees from './employees.json';
 import EmployeeTable from './Components/EmployeeTable';
+
 
 class App extends React.Component {
  state = {
@@ -16,6 +17,7 @@ class App extends React.Component {
 
  render() {
    return (
+
      <BrowserRouter>
       {this.state.display === "home" && (
         <div className="App">        

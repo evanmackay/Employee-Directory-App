@@ -65,9 +65,9 @@ class EmployeeTable extends React.Component {
           />
         </InputGroup>
 
-        {this.state.employees.map((employee) => {
+        {this.state.employees.map((employee, index) => {
             if (employee.visible) {
-          return <div>
+          return <div key={index}>
             <Card className="employeeCard" style={{ width: "100%" }}>
               <Card.Body>
                 <Image src={employee.picture} roundedCircle />
@@ -75,11 +75,9 @@ class EmployeeTable extends React.Component {
                 <Card.Title>
                   {employee.firstname} {employee.lastname}
                 </Card.Title>
-                <Card.Text>
                   <ListGroup.Item>Phone: {employee.phone}</ListGroup.Item>
                   <ListGroup.Item>Email: {employee.email}</ListGroup.Item>
                   <ListGroup.Item>Location: {employee.city}, {employee.state}</ListGroup.Item>
-                </Card.Text>
               </Card.Body>
             </Card>
           </div>
